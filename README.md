@@ -30,9 +30,9 @@
 - Elixir
 - LivePreview
 
-:: Demo
+:house: Demo
 
-https://twitter-clone.gigalixirapp.com/
+https://lucky-reflecting-junebug.gigalixirapp.com/posts
 
 :information_source: To start your Phoenix server:
 
