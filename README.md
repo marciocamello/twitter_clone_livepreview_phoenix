@@ -30,6 +30,10 @@
 - Elixir
 - LivePreview
 
+:: Demo
+
+https://twitter-clone.gigalixirapp.com/
+
 :information_source: To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
