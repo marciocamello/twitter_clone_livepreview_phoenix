@@ -1,6 +1,6 @@
 # Twitter Clone Phoenix Framework with new Live Preview
 
-![alt text](https://github.com/marciocamello//phoenix-liveview-15m.twitter/blob/master/twitter_clone.jpg)
+![alt text](https://github.com/marciocamello/twitter_clone_livepreview_phoenix/blob/master/twitter_clone.jpg)
 
 ---
 
