@@ -1,4 +1,4 @@
-# TwitterCloneElixir
+# Twitter Clone Phoenix Framework with new Live Preview
 
 To start your Phoenix server:
 
