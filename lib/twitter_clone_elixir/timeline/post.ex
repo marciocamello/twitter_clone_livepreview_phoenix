@@ -14,8 +14,9 @@ defmodule TwitterCloneElixir.Timeline.Post do
   @doc false
   def changeset(post, attrs) do
     post
-    |> cast(attrs, [:body])
-    |> validate_required([:body])
+    |> cast(attrs, [:body, :username])
+    |> validate_required([:body, :username])
     |> validate_length(:body, min: 2, max: 250)
+    |> validate_length(:username, min: 3, max: 20)
   end
 end

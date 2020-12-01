@@ -8,7 +8,7 @@ defmodule TwitterCloneElixirWeb.PostLive.Index do
   def mount(_params, _session, socket) do
     if connected?(socket), do: Timeline.subscribe()
 
-    {:ok, assign(socket, :posts, list_posts()), temporary_assigns: [posts: []]}
+    {:ok, assign(socket, :posts, list_posts())}
   end
 
   @impl true
@@ -47,8 +47,25 @@ defmodule TwitterCloneElixirWeb.PostLive.Index do
     {:noreply, update(socket, :posts, fn posts -> [post | posts] end)}
   end
 
-  def handle_info({:post_updated, post}, socket) do
-    {:noreply, update(socket, :posts, fn posts -> [post | posts] end)}
+  def handle_info({:post_updated, updated_post}, socket) do
+    {:noreply, update(socket, :posts, fn posts ->
+      for post <- posts do
+        case post.id == updated_post.id do
+          true -> updated_post
+          _ -> post
+        end
+      end
+    end)}
+  end
+
+  def handle_info({:post_deleted, deleted_post}, socket) do
+    {:noreply,
+     update(socket, :posts, fn posts ->
+       posts
+       |> Enum.reject(fn post ->
+         post.id == deleted_post.id
+       end)
+     end)}
   end
 
   defp list_posts do

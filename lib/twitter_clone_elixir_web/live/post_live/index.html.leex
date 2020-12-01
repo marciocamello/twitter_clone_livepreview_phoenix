@@ -9,10 +9,10 @@
     return_to: Routes.post_index_path(@socket, :index) %>
 <% end %>
 
-<div id="posts" phx-update="prepend">
+<span><%= live_patch "New Post", to: Routes.post_index_path(@socket, :new) %></span>
+
+<div id="posts" phx-update="replace">
     <%= for post <- @posts do %>
         <%= live_component @socket, TwitterCloneElixirWeb.PostLive.PostComponent, id: post.id, post: post %>
     <% end %>
 </div>
-
-<span><%= live_patch "New Post", to: Routes.post_index_path(@socket, :new) %></span>
