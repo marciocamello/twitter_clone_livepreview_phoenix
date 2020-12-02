@@ -58,7 +58,7 @@ config :twitter_clone_elixir, TwitterCloneElixirWeb.Endpoint,
 config :twitter_clone_elixir, TwitterCloneElixirWeb.Endpoint,
   live_reload: [
     patterns: [
-      ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
+      ~r"priv/static/[?!uploads].*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
       ~r"lib/twitter_clone_elixir_web/(live|views)/.*(ex)$",
       ~r"lib/twitter_clone_elixir_web/templates/.*(eex)$"

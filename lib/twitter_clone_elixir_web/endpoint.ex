@@ -24,7 +24,7 @@ defmodule TwitterCloneElixirWeb.Endpoint do
     at: "/",
     from: :twitter_clone_elixir,
     gzip: false,
-    only: ~w(css fonts images js favicon.ico robots.txt)
+    only: ~w(css fonts images js favicon.ico robots.txt uploads)
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.

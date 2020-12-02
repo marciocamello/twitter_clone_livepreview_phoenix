@@ -23,6 +23,14 @@ config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
 
+config :ex_aws,
+  json_codec: Jason,
+  debug_requests: true,
+  access_key_id: [{:system, "AWS_ACCESS_KEY_ID"}, {:awscli, "default", 30}, :instance_role],
+  secret_access_key: [{:system, "AWS_SECRET_ACCESS_KEY"}, {:awscli, "default", 30}, :instance_role],
+  #security_token: [{:system, "AWS_SESSION_TOKEN"}, {:awscli, "default", 30}, :instance_role],
+  region: "us-east-1"
+
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 

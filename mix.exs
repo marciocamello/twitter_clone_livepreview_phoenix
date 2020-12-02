@@ -46,7 +46,13 @@ defmodule TwitterCloneElixir.MixProject do
       {:telemetry_poller, "~> 0.4"},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
-      {:plug_cowboy, "~> 2.0"}
+      {:plug_cowboy, "~> 2.0"},
+      {:hackney, "~> 1.15"},
+      {:ex_aws, "~> 2.1"},
+      {:ex_aws_s3, "~> 2.0"},
+      {:sweet_xml, "~> 0.6"},
+      {:ex_aws_sts, "~> 2.0"},
+      {:configparser_ex, "~> 4.0"}
     ]
   end
 
